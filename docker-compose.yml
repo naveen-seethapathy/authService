@@ -1,0 +1,58 @@
+version: "3"
+
+# Main Network for all containers to communicate
+networks:
+  main:
+
+services:
+    mysql:
+        container_name: mysql
+        image: mysql/mysql-server:5.7
+        ports:
+          - "3306:3306"
+        expose:
+          - "3306"
+        volumes:
+          - "$MYSQL_ROOT:/var/lib/mysql"
+        environment:
+          MYSQL_DATABASE: 'db'
+          MYSQL_USER: 'user'
+          MYSQL_PASSWORD: 'secret'
+          MYSQL_ROOT_PASSWORD: 'secret'
+        networks:
+          main:
+            aliases:
+              - mysql
+    
+    redis:
+      container_name: redis
+      image: redis:alpine
+      ports:
+        - "6379:6379"
+      volumes:
+        - "$REDIS_DATA_DIR:/data"
+      networks:
+        main:
+          aliases:
+            - redis
+
+    auth:
+      container_name: auth
+      image: auth-local
+      build:
+          context: $SRC_ROOT/$SRC_PHP_LUMEN
+          args:
+          - XDEBUG_HOST_IP=localhost
+          - APPENV=$ENVIRONMENT_LUMEN
+          dockerfile: Dockerfile-local
+      volumes:
+          - "$SRC_ROOT/$SRC_PHP_LUMEN:/var/www/html"
+      ports:
+        - "80:80"
+      depends_on:
+          - mysql
+          - redis
+      networks:
+          main:
+            aliases:
+              - auth
