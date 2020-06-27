@@ -15,6 +15,13 @@ class UserController extends Controller
 {
     use TransformsResponses;
 
+    /**
+     * Register endpoint to create users
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function register(Request $request)
     {
         $requestData = $request->all();
@@ -77,6 +84,13 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Get user info endpoint after authentication
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getUser(Request $request)
     {
         return $this->respond([
@@ -87,6 +101,13 @@ class UserController extends Controller
         ], [], 200);
     }
 
+    /**
+     * API Login endpoint
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function login(Request $request)
     {
         $requestData = $request->all();
@@ -142,6 +163,13 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Logout User
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function logout(Request $request)
     {
         try {

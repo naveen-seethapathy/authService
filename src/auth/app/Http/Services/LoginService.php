@@ -7,11 +7,22 @@ use Illuminate\Support\Str;
 
 class LoginService
 {
+    /**
+     * Generate api toekn
+     *
+     * @return string
+     */
     public static function generateToken()
     {
         return base64_encode(Str::random(40).time());
     }
 
+    /**
+     * Cache token in redis
+     *
+     * @param $token
+     * @param $userId
+     */
     public static function cacheAuthToken($token, $userId)
     {
         $cache = new RedisService();
@@ -20,6 +31,13 @@ class LoginService
         $cache->setData($key, $userId, $expiry);
     }
 
+    /**
+     * Set auth token after register / login
+     *
+     * @param User $user
+     *
+     * @return string
+     */
     public static function setAuthToken(User $user)
     {
         // Create random Auth token for API Access
