@@ -32,17 +32,18 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 
 2. Create two new directories named `mysql` and `redis` inside the cloned directory. This will be used as volume mount location for the services respectively.
 
-3. Open a new terminal/CMD, navigate to this repository root (where `docker-compose.yml` exists) and execute the following command:
+3. Copy local .env file to root of lumen app `cp src/auth/env_configs/local/.env src/auth/.env`
+
+4. Open a new terminal/CMD, navigate to this repository root (where `docker-compose.yml` exists) and execute the following command:
 
     ```
     $ docker-compose up -d
     ```
 
-4. After the whole stack is up, enter the app container and install the framework of your choice:
+5. After the whole stack is up, enter the app container and install the framework of your choice:
 
     ```
     $ docker exec -it app bash
-    $ nano .env
     $ php artisan migrate --seed
     ```
 
