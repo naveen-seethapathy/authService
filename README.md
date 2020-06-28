@@ -48,3 +48,7 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
     ```
 
 5. That's it! Navigate to [http://localhost](http://localhost) to access the application.
+
+### **API Documentation**
+
+[Swagger API Documentation](https://app.swaggerhub.com/apis-docs/nseethapathy/authService/1.0.0)

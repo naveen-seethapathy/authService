@@ -3,3 +3,4 @@
 /redis/*
 /redis/*.*
 .idea
+.DS_Store
