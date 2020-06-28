@@ -52,3 +52,10 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 ### **API Documentation**
 
 [Swagger API Documentation](https://app.swaggerhub.com/apis-docs/nseethapathy/authService/1.0.0)
+
+### **Other Documents**
+
+- Technical Roadmap:    `roadmap.pdf`
+- System Design:   `Auth-Inventory-Design.pdf`
+- Design Specification:    `Design-Specification.pdf`
+- Schema:   `user-products-orders-schema.pdf`
