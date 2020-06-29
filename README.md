@@ -28,7 +28,7 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 
 **Installation steps:** 
 
-1. Clone this repository in to the `/Users/<name>` directory
+1. Clone this repository in to the `/Users/<name>` directory. If cloned in to other directory, make sure to have the correct paths in the `.env` file in the root of the cloned directory.
 
 2. Create two new directories named `mysql` and `redis` inside the cloned directory. This will be used as volume mount location for the services respectively.
 
