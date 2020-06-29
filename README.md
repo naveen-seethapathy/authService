@@ -5,7 +5,7 @@
 This will create a dockerized stack for a Laravel/Lumen application, consisted of the following containers:
 -  **src/auth**, Lumen application container
 
-        Nginx, PHP7.2 PHP7.2-fpm, Composer
+        Nginx, PHP7.3 PHP7.3-fpm, Composer
             
 -  **mysql**, MySQL database container 
 
