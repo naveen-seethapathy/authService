@@ -44,6 +44,7 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 
     ```
     $ docker exec -it auth bash
+    $ composer install
     $ php artisan migrate --seed
     ```
 
