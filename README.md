@@ -43,7 +43,7 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
 5. After the whole stack is up, enter the app container and install the framework of your choice:
 
     ```
-    $ docker exec -it app bash
+    $ docker exec -it auth bash
     $ php artisan migrate --seed
     ```
 
